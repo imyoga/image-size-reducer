@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Size Reducer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Size Reducer</h1>
+        
+        <div class="upload-container" id="dropZone">
+            <div class="upload-text">
+                Drag & Drop image here or
+                <label for="fileInput" class="upload-button">Browse Files</label>
+                <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden>
+            </div>
+        </div>
+
+        <div class="image-preview-container" id="previewContainer" style="display: none;">
+            <div class="preview-section">
+                <h3>Original Image</h3>
+                <img id="originalPreview" alt="Original preview">
+                <div class="size-info">
+                    Size: <span id="originalSize">0 KB</span><br>
+                    Dimensions: <span id="originalDimensions">0 x 0</span>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h3>Modified Image</h3>
+                <img id="modifiedPreview" alt="Modified preview">
+                <div class="size-info">
+                    Size: <span id="modifiedSize">0 KB</span><br>
+                    Dimensions: <span id="modifiedDimensions">0 x 0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls" id="controlsContainer" style="display: none;">
+            <div class="resize-type">
+                <label>Resize Type:</label>
+                <div class="toggle-container">
+                    <button class="toggle-button active" id="pixelToggle">Pixels</button>
+                    <button class="toggle-button" id="percentageToggle">Percentage</button>
+                </div>
+            </div>
+
+            <div class="dimensions">
+                <div class="dimension-input">
+                    <label for="widthInput">Width:</label>
+                    <input type="number" id="widthInput" min="1">
+                    <span class="unit" id="widthUnit">px</span>
+                </div>
+                <div class="dimension-input">
+                    <label for="heightInput">Height:</label>
+                    <input type="number" id="heightInput" min="1">
+                    <span class="unit" id="heightUnit">px</span>
+                </div>
+            </div>
+
+            <div class="aspect-ratio">
+                <input type="checkbox" id="aspectRatio" checked>
+                <label for="aspectRatio">Lock Aspect Ratio</label>
+            </div>
+
+            <button id="downloadBtn" class="download-button">Download Resized Image</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
